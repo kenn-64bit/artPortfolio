@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flex Images</title>
+    <style>
+        /* Grid container settings */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-auto-flow: dense; /* Fills gaps to prevent single large images */
+            gap: 8px; /* Space between grid items */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Image behavior */
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images fill the space without distortion */
+            display: block;
+        }
+
+        /* Different image sizes */
+        .grid-item {
+            overflow: hidden;
+        }
+
+        /* Larger images */
+        .grid-item.wide {
+            grid-column: span 2;
+        }
+
+        .grid-item.tall {
+            grid-row: span 2;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid-item.wide, .grid-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item"><img src="/artstyle/art (1).png" alt="Image 1"></div>
+        <div class="grid-item"><img src="/artstyle/art (20).png" alt="Image 2"></div>
+        <div class="grid-item"><img src="/artstyle/art (21).png" alt="Image 3"></div>
+        <div class="grid-item wide"><img src="/artstyle/art (22).png" alt="Image 4"></div>
+        <div class="grid-item tall"><img src="/artstyle/art (23).png" alt="Image 5"></div>
+        <div class="grid-item"><img src="/artstyle/art (24).png" alt="Image 6"></div>
+    </div>
+    
+</body>
+
+</html>

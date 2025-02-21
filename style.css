@@ -1,0 +1,299 @@
+*{
+    color: gainsboro;
+    overflow-x: hidden;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: "League Spartan";
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow: auto; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+h2{
+    user-select: none;
+    cursor: default;
+}
+
+img {
+    pointer-events: none;  /* Prevents interactions (optional) */
+    -webkit-user-drag: none; /* For Safari */
+    user-select: none; /* Prevents selecting the image */
+}
+
+/**/
+
+#navbar{
+    margin: 0 -1px;
+    position: fixed;      
+    width: 100%;    
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 1000;   
+    display: flex;   
+    justify-content: center;
+    padding: 1.5rem 0; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+#navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 10rem;
+    margin-left: 4rem;
+}
+
+#navbar ul li a{
+    transition: 0.250s ease-in-out;
+}
+
+#navbar ul li a:hover{
+    color: grey;
+    text-shadow: #000000;
+}
+
+#navbar li{
+    letter-spacing: 1rem;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar ul .logo{
+    width: 80px;
+    height: auto;
+}
+
+/**/
+
+#body{
+    background-color: #000000;
+    background-image:  linear-gradient(#020202 2px, transparent 2px), linear-gradient(90deg, #020202 2px, transparent 2px), linear-gradient(#020202 1px, transparent 1px), linear-gradient(90deg, #020202 1px, #000000 1px);
+    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+#body .herotitle{
+    position: absolute;
+    z-index: 4;
+    padding: 15rem 28rem;
+}
+
+.hero{
+    margin-left: -10px;
+}
+
+/**/
+
+
+.profile{
+    margin: 18rem 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#profile .profiletext .textcontainer{
+    display: flex;
+}
+
+#profile .profiletext .textcontainer h2{
+    margin: 0 1rem;
+}
+
+.text_right{
+    display: flex;
+    gap: 1rem; 
+    justify-content: end;
+}
+
+.text_left{
+    display: flex;
+    gap: 1rem; 
+    justify-content: start;
+}
+
+.profile-right{
+    margin: 0 2rem;
+    line-height: 3;
+}
+
+.profile-left{
+    margin: 0 2rem;
+    line-height: 3;
+}
+
+.right{
+   float: left;
+}
+
+.profilecard{
+    display: flex;
+    align-items: center;
+}
+
+
+/**/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-flow: dense; 
+    gap: 1px; 
+    margin: 0;
+    padding: 0;
+}
+
+.hover-text {
+    font-size: 15px;
+    justify-items: start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    text-align: center;
+    /* Optional overlay background */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 10px;
+    pointer-events: none; /* This ensures the hover works smoothly */
+}
+
+.grid-item:hover .hover-text {
+    opacity: 1;
+}
+
+.grid-item:hover::before {
+    opacity: 1;
+}
+
+/* Optional: zoom effect on hover */
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+.image-container:hover .hover-text {
+    opacity: 1;
+}
+
+.grid-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.grid-item img {
+    filter: grayscale(75%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+
+.grid-item.wide {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.grid-item.tall {
+    grid-row: span 1;
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .grid-item.wide, .grid-item.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-item:empty {
+        display: none;
+    }
+}
+
+/**/
+
+#announcement{
+    letter-spacing: 1rem;
+    font-size: 4rem;
+    margin: 15rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer{
+    position: relative;
+    margin: 5rem 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.imgfooter{
+    width: auto;
+    height: 150px;
+}
+
+#footer{
+    margin: 0 0;
+    padding: 5rem;
+    background: linear-gradient(358deg, rgb(18, 18, 18), rgb(0, 0, 0));
+}
+
+.signaturePOL{
+    position: absolute;
+    margin: 8rem;
+    margin-top: 24rem;
+    z-index: 109;
+}
+
+.signatureLNCE{
+    position: absolute;
+    margin: 29rem;
+    margin-top: 45rem;
+    z-index: 109;
+}
+
+#profile .fa-brands{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+#footer .profilecard .fa-brands{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin: 0 15px;
+}
+
+.fa-arrow-up{
+    opacity: 75%;
+    font-size: 30px;
+    position: absolute;
+    right: 7rem;
+    z-index: 10;
+}
